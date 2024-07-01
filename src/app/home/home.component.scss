@@ -66,6 +66,7 @@
     height: fit-content;
     padding: 0 5vw;
     max-width: fit-content;
+    box-sizing: border-box;
     position: relative;
 
     &:before {
