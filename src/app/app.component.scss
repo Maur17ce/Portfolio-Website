@@ -1,0 +1,92 @@
+@use "variables" as v;
+
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  padding: 8px v.$contentSpacing;
+  box-sizing: border-box;
+
+  mdf-name-bubble {
+    flex: 1;
+  }
+
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  header {
+    flex: 1;
+    position: sticky;
+    max-height: 56px !important;
+    top: 0;
+    background: var(--mat-app-background-color);
+    z-index: 999;
+  }
+
+  main {
+    flex: 1;
+  }
+
+}
+
+nav {
+  display: flex;
+  gap: 16px;
+
+  a:not(.activeNav) {
+    color: currentColor;
+  }
+
+}
+
+.activeNav {
+  color: var(--sys-primary) !important;
+}
+
+.mobileNav {
+  display: none;
+}
+
+.notAvailable {
+  color: var(--sys-error) !important;
+}
+
+.footerBar {
+  height: auto;
+  padding: v.$defaultSpacing;
+
+  .footer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: v.$defaultSpacing;
+
+    .footerCol {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footerItem {
+      opacity: .5;
+      font: var(--sys-label-small);
+      color: currentColor;
+    }
+
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+  .mobileNav {
+    display: block;
+  }
+  nav {
+    display: none;
+  }
+}
+
+

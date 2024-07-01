@@ -1,0 +1,30 @@
+<mdf-list-detail [currentEditObject]="currentEditObject" [data$]="data$"
+                 [formGroup]="formGroup" [mockValue]="mockData" [newButtonKey]="newButtonKey" idColumnName="id">
+  <ng-template #listItemIcon let-opt>
+    <mat-icon>message</mat-icon>
+  </ng-template>
+  <ng-template #listItemTitle let-opt>
+    <span>{{ opt.email }}</span>
+  </ng-template>
+  <ng-template #listItemLine let-opt>
+    <span>{{ opt.company_name }}</span>
+  </ng-template>
+  <mat-form-field>
+    <mat-label>Company / Name</mat-label>
+    <mat-icon matIconPrefix>person</mat-icon>
+    <input [formControl]="formGroup.controls.company_name" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>E-Mail</mat-label>
+    <mat-icon matIconPrefix>
+      alternate_email
+    </mat-icon>
+    <input [formControl]="formGroup.controls.email" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Message</mat-label>
+    <mat-icon matIconPrefix>message</mat-icon>
+    <textarea [cdkTextareaAutosize]="true" [formControl]="formGroup.controls.message"
+              matInput></textarea>
+  </mat-form-field>
+</mdf-list-detail>

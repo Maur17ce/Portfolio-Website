@@ -1,0 +1,34 @@
+<div class="content">
+  <div class="innerContent">
+    <div>
+      <h4 class="title">Maurice - {{ 'HIRE_ME.SOFTWARE_DEVELOPER' | translate }}</h4>
+      <span>{{ 'HIRE_ME.CONTACT_ME' | translate }}</span>
+    </div>
+    <mat-card [formGroup]="hireMeForm">
+      <mat-card-content class="cardContent">
+        <mat-form-field>
+          <mat-label>{{ 'HIRE_ME.NAME_COMPANY' | translate }}</mat-label>
+          <input [formControl]="hireMeForm.controls.company_name" matInput>
+          <mat-icon matIconPrefix>person</mat-icon>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>{{ 'HIRE_ME.EMAIL' | translate }}</mat-label>
+          <input [email]="true" [formControl]="hireMeForm.controls.email" matInput type="email">
+          <mat-icon matIconPrefix>alternate_email</mat-icon>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>{{ 'HIRE_ME.MESSAGE' | translate }}</mat-label>
+          <textarea [cdkTextareaAutosize]="true" [formControl]="hireMeForm.controls.message" cdkAutosizeMaxRows="20"
+                    cdkAutosizeMinRows="1" matInput></textarea>
+          <mat-icon matIconPrefix>message</mat-icon>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button (click)="sendMessage()" [disabled]="hireMeForm.invalid" mat-flat-button>
+          <mat-icon>mail</mat-icon>
+          {{ 'ACTIONS.CONTACT_ME' | translate }}
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

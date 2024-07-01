@@ -1,0 +1,50 @@
+@use '@angular/material' as mat;
+@use "m3-theme" as theme;
+
+@include mat.core();
+
+:root {
+  @include mat.core-theme(theme.$dark-theme);
+  @include mat.all-component-themes(theme.$dark-theme);
+  @include mat.typography-hierarchy(mat.define-typography());
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    @include mat.system-level-colors(theme.$dark-theme);
+    @include mat.system-level-typography(theme.$dark-theme);
+    @include mat.color-variants-backwards-compatibility(theme.$dark-theme);
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  :root {
+    @include mat.system-level-colors(theme.$light-theme);
+    @include mat.system-level-typography(theme.$dark-theme);
+    @include mat.core-color(theme.$light-theme);
+    @include mat.all-component-colors(theme.$light-theme);
+    @include mat.color-variants-backwards-compatibility(theme.$light-theme);
+  }
+}
+
+// Comment out the line below if you want to use the pre-defined typography utility classes.
+// For more information: https://material.angular.io/guide/typography#using-typography-styles-in-your-application.
+// @include mat.typography-hierarchy($test-theme);
+
+// Comment out the line below if you want to use the deprecated `color` inputs.
+// @include mat.color-variants-backwards-compatibility($test-theme);
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

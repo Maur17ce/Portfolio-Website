@@ -1,0 +1,24 @@
+h4 {
+  margin: 0 !important;
+  color: var(--sys-on-primary);
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  max-width: fit-content;
+
+  &:before {
+    position: absolute;
+    content: "";
+    background: linear-gradient(to right, var(--sys-primary), var(--sys-tertiary));
+    height: 300%;
+    width: 300%;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -40%);
+    box-sizing: border-box;
+    border-left: 3rem solid var(--sys-background);
+  }
+}

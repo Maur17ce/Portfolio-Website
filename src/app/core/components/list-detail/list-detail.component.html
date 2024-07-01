@@ -1,0 +1,64 @@
+@if (data$ | async; as data) {
+  <div class="content">
+    <div class="listWrapper">
+      <button mat-flat-button (click)="mockNewObject()">
+        <mat-icon>add</mat-icon>
+        {{ newButtonKey }}
+      </button>
+      <div class="list">
+        <mat-selection-list [(ngModel)]="currentEditObject"
+                            [hideSingleSelectionIndicator]="true" [multiple]="false">
+          @for (opt of data; track opt[idColumnName]) {
+            <mat-list-option [value]="opt" #option=matListOption (click)="currentEditObject = [opt]"
+                             [ngClass]="{'mdf-active-item': option.selected}">
+              <div matListItemIcon>
+                <ng-container [ngTemplateOutlet]="listItemIcon"
+                              [ngTemplateOutletContext]="{ $implicit: opt }"></ng-container>
+              </div>
+              <div matListItemTitle>
+                <ng-container [ngTemplateOutlet]="listItemTitle"
+                              [ngTemplateOutletContext]="{ $implicit: opt }"></ng-container>
+              </div>
+              <div matListItemLine>
+                <ng-container [ngTemplateOutlet]="listItemLine"
+                              [ngTemplateOutletContext]="{ $implicit: opt }"></ng-container>
+              </div>
+              <div matListItemMeta>
+                <ng-container [ngTemplateOutlet]="listItemMeta"
+                              [ngTemplateOutletContext]="{ $implicit: opt }"></ng-container>
+              </div>
+            </mat-list-option>
+            <mat-divider/>
+          }
+        </mat-selection-list>
+      </div>
+    </div>
+    @if (currentEditObject || currentEditObject === false) {
+      <mat-card [formGroup]="formGroup">
+        <mat-card-header>
+          <mat-card-title>Portfolio-Entry</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="cardContent">
+          <ng-content/>
+        </mat-card-content>
+        <mat-card-actions align="end" class="cardActions">
+          <button mat-flat-button color="warn" (click)="deleteEntry()">
+            <mat-icon>delete</mat-icon>
+            Delete
+          </button>
+          @if (currentEditObject.length > 0 && currentEditObject[0][idColumnName]) {
+            <button mat-flat-button (click)="updateEntry()" [disabled]="formGroup.invalid">
+              <mat-icon>save</mat-icon>
+              Save
+            </button>
+          } @else {
+            <button mat-flat-button (click)="insertEntry()" [disabled]="formGroup.invalid">
+              <mat-icon>save</mat-icon>
+              Save
+            </button>
+          }
+        </mat-card-actions>
+      </mat-card>
+    }
+  </div>
+}

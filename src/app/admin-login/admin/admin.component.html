@@ -1,0 +1,15 @@
+<div class="container">
+  <nav [tabPanel]="tabPanel" mat-tab-nav-bar>
+    <a mat-tab-link>Dashboard</a>
+    <a #link=routerLinkActive [active]="link.isActive" mat-tab-link routerLink="portfolio-management"
+       routerLinkActive="active">Portfolio-Management</a>
+    <a #link2=routerLinkActive [active]="link2.isActive" mat-tab-link routerLink="messages"
+       routerLinkActive="active">Messages</a>
+    <a mat-tab-link>User-Management</a>
+  </nav>
+  <div class="content">
+    <mat-tab-nav-panel #tabPanel>
+      <router-outlet></router-outlet>
+    </mat-tab-nav-panel>
+  </div>
+</div>

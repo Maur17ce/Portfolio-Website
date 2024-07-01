@@ -1,0 +1,37 @@
+@use "variables" as v;
+
+.content {
+  padding: v.$contentSpacing;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > * {
+    flex: 1;
+    max-width: 50%;
+    min-width: fit-content;
+  }
+
+  .innerContent {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: var(--sys-primary);
+}
+
+h4, h3 {
+  margin: 0 !important;
+}

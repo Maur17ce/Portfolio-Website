@@ -1,0 +1,41 @@
+<mdf-list-detail (entryDeleted)="deleteEntry()" (entryInserted)="insertEntry()" (entryUpdated)="updateEntry()"
+                 [currentEditObject]="currentEditObject" [data$]="data$"
+                 [formGroup]="formGroup" [mockValue]="mockData" [newButtonKey]="newButtonKey" idColumnName="id">
+  <ng-template #listItemIcon let-opt>
+    <mat-icon>apartment</mat-icon>
+  </ng-template>
+  <ng-template #listItemTitle let-opt>
+    <span>{{ opt.company }}</span>
+  </ng-template>
+  <ng-template #listItemLine let-opt>
+    <span>{{ opt.job }}</span>
+  </ng-template>
+  <ng-template #listItemMeta let-opt>
+    <span>{{ opt.dateto | date : "YYYY" }}</span>
+  </ng-template>
+  <mat-form-field>
+    <mat-label>Company</mat-label>
+    <input [formControl]="formGroup.controls.company" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Jobcategory</mat-label>
+    <input [formControl]="formGroup.controls.job" matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <textarea [cdkTextareaAutosize]="true" [formControl]="formGroup.controls.description"
+              matInput></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Date From</mat-label>
+    <input [formControl]="formGroup.controls.datefrom" [matDatepicker]="dpFrom" matInput>
+    <mat-datepicker #dpFrom/>
+    <mat-datepicker-toggle [for]="dpFrom" matIconSuffix/>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Date To</mat-label>
+    <input [formControl]="formGroup.controls.dateto" [matDatepicker]="dpTo" matInput>
+    <mat-datepicker #dpTo/>
+    <mat-datepicker-toggle [for]="dpTo" matIconSuffix/>
+  </mat-form-field>
+</mdf-list-detail>

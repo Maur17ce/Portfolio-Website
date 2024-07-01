@@ -1,0 +1,27 @@
+{
+  "NAVIGATIONS": {
+    "ABOUT_ME": "Über mich.",
+    "SERVICES": "Dienstleistungen.",
+    "PORTFOLIO": "Portfolio.",
+    "HIRE_ME": "Einstellen."
+  },
+  "HOME": {
+    "IM_A_PROFESSIONAL": "ICH BIN EIN PROFESSIONELLER",
+    "SOFTWARE_DEVELOPER": "SOFTWAREENTWICKLER",
+    "DESCRIPTION": "Moin! Ich bin Maurice, {{age}} Jahre alt und brenne schon seit meinem 9. Lebensjahr für die Softwareentwicklung. Meine Ausbildungen bei msg systems in Passau und der SEWOBE AG in Augsburg haben meine Fähigkeiten in Angular, PHP, Java und Spring Boot geschärft. Ich bin ein teamfähiger Macher und will mich gerne an innovativen Projekten mit echtem Einfluss beteiligen. Lass uns in Kontakt kommen!"
+  },
+  "HIRE_ME": {
+    "SOFTWARE_DEVELOPER": "Softwareentwickler",
+    "CONTACT_ME": "Nehmen Sie Kontakt auf, für ein Gespräch über Ihr Projekt!",
+    "NAME_COMPANY": "Name / Firma",
+    "EMAIL": "E-Mail",
+    "MESSAGE": "Nachricht"
+  },
+  "ACTIONS": {
+    "HIRE_ME": "Jetzt Einstellen!",
+    "CONTACT_ME": "Jetzt Kontaktieren!"
+  },
+  "TOOLTIPS": {
+    "NOT_AVAILABLE": "Nicht verfügbar"
+  }
+}

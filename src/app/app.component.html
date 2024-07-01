@@ -1,0 +1,45 @@
+<div class="content">
+  <header class="header">
+    <div class="headerWrapper">
+      <mdf-name-bubble/>
+      <button [matMenuTriggerFor]="navigations" class="mobileNav" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <nav>
+        <a mat-button routerLink="home" routerLinkActive="activeNav">{{ 'NAVIGATIONS.ABOUT_ME' | translate }}</a>
+        <div [matTooltip]="'TOOLTIPS.NOT_AVAILABLE' | translate">
+          <a class="notAvailable" disabled mat-button routerLink="services"
+             routerLinkActive="activeNav">{{ 'NAVIGATIONS.SERVICES' | translate }}</a>
+        </div>
+        <a mat-button routerLink="portfolio" routerLinkActive="activeNav">{{ 'NAVIGATIONS.PORTFOLIO' | translate }}</a>
+        <a mat-button routerLink="hire-me" routerLinkActive="activeNav">{{ 'NAVIGATIONS.HIRE_ME' | translate }}</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <router-outlet/>
+    <footer>
+      <mat-divider/>
+      <mat-toolbar class="footerBar">
+        <div class="footer">
+          <div class="footerCol">
+            <a class="footerItem" routerLink="legal/imprint">Impressum</a>
+            <a class="footerItem" routerLink="legal/data-protection">Datenschutz</a>
+            <a class="footerItem" routerLink="legal/liability-committee">Haftungsausschluss</a>
+          </div>
+          <div class="footerCol">
+            <a class="footerItem" href="https://www.linkedin.com/in/maurice-de-felice-8a81b423b/" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+      </mat-toolbar>
+    </footer>
+  </main>
+</div>
+
+<mat-menu #navigations>
+  <a mat-menu-item routerLink="home" routerLinkActive="activeNav">{{ 'NAVIGATIONS.ABOUT_ME' | translate }}</a>
+  <a [matTooltip]="'TOOLTIPS.NOT_AVAILABLE' | translate" disabled mat-menu-item routerLink="services"
+     routerLinkActive="activeNav">{{ 'NAVIGATIONS.SERVICES' | translate }}</a>
+  <a mat-menu-item routerLink="portfolio" routerLinkActive="activeNav">{{ 'NAVIGATIONS.PORTFOLIO' | translate }}</a>
+  <a mat-menu-item routerLink="hire-me" routerLinkActive="activeNav">{{ 'NAVIGATIONS.HIRE_ME' | translate }}</a>
+</mat-menu>

@@ -1,0 +1,140 @@
+@use "variables" as v;
+
+@media screen and (min-width: 800px) and (min-height: 600px) {
+  .container {
+    padding: 10% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  box-sizing: border-box;
+  padding: v.$contentSpacing;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap-reverse;
+  flex: 1;
+  overflow: auto;
+
+  > * {
+    flex: 1;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    min-width: 200px;
+    max-width: 36rem;
+
+    .job {
+      color: var(--sys-primary);
+    }
+
+    h4 {
+      margin: 0 !important;
+    }
+
+    a {
+      max-width: fit-content;
+    }
+
+  }
+
+  .pictureOfMe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    padding: 0 5vw;
+    max-width: fit-content;
+    position: relative;
+
+    &:before {
+      content: "";
+      width: 10%;
+      aspect-ratio: 1;
+      box-sizing: border-box;
+      background: linear-gradient(to right, var(--sys-primary), var(--sys-tertiary));
+      position: absolute;
+      z-index: -1;
+      left: 30%;
+      top: 20%;
+      border-radius: 50%;
+    }
+
+    .imgWrapper {
+      position: relative;
+      aspect-ratio: 558/855;
+      max-height: 100%;
+      padding: 0 5vw;
+      max-width: 100%;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .img {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        filter: drop-shadow(2px 4px 6px currentColor);
+        background-image: url("me.png");
+        border-radius: 0 0 14% 14%;
+        flex: 1;
+        aspect-ratio: 558/855;
+        min-height: calc(50vh - 56px);
+      }
+
+      &:before {
+        content: "";
+        width: 75%;
+        height: 50%;
+        padding-right: 50%;
+        box-sizing: border-box;
+        background: linear-gradient(to right, var(--sys-primary), var(--sys-tertiary));
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        bottom: 0;
+        border-radius: 50%;
+      }
+
+      &:after {
+        content: "";
+        width: 50%;
+        height: 100%;
+        padding-right: 50%;
+        box-sizing: border-box;
+        background: linear-gradient(to right, var(--sys-primary), var(--sys-tertiary));
+        position: absolute;
+        z-index: -1;
+        right: 0;
+        top: 0;
+        border-radius: 50%;
+      }
+
+
+    }
+
+  }
+
+}

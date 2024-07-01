@@ -1,0 +1,21 @@
+<div class="content">
+  <div class="container">
+    <div class="description">
+      <div class="descriptionText">
+        <h4>{{ 'HOME.IM_A_PROFESSIONAL' | translate }}</h4>
+        <h4 class="job">{{ 'HOME.SOFTWARE_DEVELOPER' | translate }}</h4>
+        <span>{{ 'HOME.DESCRIPTION' | translate : {age: "2004-11-11" | getAge} }}</span>
+      </div>
+      <a mat-flat-button routerLink="/hire-me" style="flex-shrink: 0">
+        <mat-icon>arrow_forward</mat-icon>
+        {{ 'ACTIONS.HIRE_ME' | translate }}
+      </a>
+    </div>
+    <div class="pictureOfMe">
+      <div class="imgWrapper">
+        <div class="img"></div>
+        <!--        <img src="me.png">-->
+      </div>
+    </div>
+  </div>
+</div>
